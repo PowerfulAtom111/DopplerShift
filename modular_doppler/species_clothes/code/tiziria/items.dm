@@ -117,7 +117,7 @@
 
 /obj/item/melee/tizirian_sword/boffa
 	name = "\improper Tiziran training sword"
-	desc = "A polymer made from bitumenic discharge shaped into a facisimilie of the chopping sabres \
+	desc = "A polymer made from bitumenic discharge shaped into a facsimile of the chopping sabres \
 	favored still by Tiziran warriors. Distributed to nascent striplings for their training, it's also \
 	found a niche amongst lizard-obsessive collectors and martial artists in 4CA controlled space. These \
 	tend to be a little shorter than the genuine articles."
