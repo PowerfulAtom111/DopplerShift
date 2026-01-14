@@ -87,10 +87,6 @@
 	icon_state = initial(icon_state)
 	worn_icon_state = initial(worn_icon_state)
 	for(var/obj/item/belt_content in contents)
-		/*if(!contents.len)
-			icon_state = initial(icon_state)
-			worn_icon_state = initial(worn_icon_state)
-			*/
 		if(istype(belt_content, /obj/item/melee/tizirian_sword/boffa))
 			icon_state += "_boffa"
 			worn_icon_state += "_boffa"
