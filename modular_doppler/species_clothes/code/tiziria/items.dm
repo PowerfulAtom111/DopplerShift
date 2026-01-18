@@ -31,6 +31,7 @@
 	attack_verb_simple = list("attack", "slash", "slice", "tear", "lacerate", "rip", "dice", "rend")
 	var/list/alt_continuous = list("bashes", "clobbers", "crushes")
 	var/list/alt_simple = list("bash", "clobber", "crush")
+	var/belt_suffix = "_choppa"
 
 /obj/item/melee/tizirian_sword/Initialize(mapload)
 	. = ..()
@@ -86,14 +87,10 @@
 /obj/item/storage/belt/lizard_sabre/update_icon_state()
 	icon_state = initial(icon_state)
 	worn_icon_state = initial(worn_icon_state)
-	for(var/obj/item/belt_content in contents)
-		if(istype(belt_content, /obj/item/melee/tizirian_sword/boffa))
-			icon_state += "_boffa"
-			worn_icon_state += "_boffa"
-			return
-		else if(istype(belt_content, /obj/item/melee/tizirian_sword))
-			icon_state += "_choppa"
-			worn_icon_state += "_choppa"
+	for(var/obj/item/melee/tizirian_sword/belt_content in contents)
+		if(istype(belt_content, /obj/item/melee/tizirian_sword))
+			icon_state += belt_content.belt_suffix
+			worn_icon_state += belt_content.belt_suffix
 			return
 	return ..()
 
@@ -120,11 +117,12 @@
 	icon_state = "boffa"
 	worn_icon_state = "boffa"
 	inhand_icon_state = "boffa"
+	belt_suffix = "_boffa"
 	hitsound = 'sound/items/weapons/genhit1.ogg'
 	block_sound = 'sound/items/weapons/block_shield.ogg'
 	obj_flags = null
 	sharpness = null
-	tool_behaviour = TOOL_KNIFE
+	tool_behaviour = null
 	force = 5 // yeeeeeouch!
 	throwforce = 5
 	armour_penetration = 0
