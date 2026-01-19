@@ -88,7 +88,7 @@
 	icon_state = initial(icon_state)
 	worn_icon_state = initial(worn_icon_state)
 	for(var/obj/item/melee/tizirian_sword/belt_content in contents)
-		if(istype(belt_content, /obj/item/melee/tizirian_sword))
+		if(belt_content)
 			icon_state += belt_content.belt_suffix
 			worn_icon_state += belt_content.belt_suffix
 			return
