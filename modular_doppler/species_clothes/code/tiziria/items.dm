@@ -91,7 +91,7 @@
 		if(belt_content)
 			icon_state += belt_content.belt_suffix
 			worn_icon_state += belt_content.belt_suffix
-			return
+			break
 	return ..()
 
 /obj/item/storage/belt/lizard_sabre/PopulateContents()
