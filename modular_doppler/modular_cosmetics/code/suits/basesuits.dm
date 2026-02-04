@@ -68,6 +68,7 @@
 	greyscale_config_worn_bodyshapes = list(BODYSHAPE_HUMANOID_T = /datum/greyscale_config/labcoat/worn,
 		BODYSHAPE_DIGITIGRADE_T = /datum/greyscale_config/labcoat/worn/digi)
 /obj/item/clothing/suit/toggle/labcoat/cmo
+	worn_icon = 'modular_doppler/modular_cosmetics/icons/mob/suit/labcoat.dmi'
 	icon = 'modular_doppler/modular_cosmetics/icons/obj/suit/labcoat.dmi'
 
 /// SPACESUITS

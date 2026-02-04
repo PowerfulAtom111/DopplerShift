@@ -9,11 +9,13 @@
 	active = TRUE
 	passtable_on(owner, SPECIES_TRAIT)
 	owner.balloon_alert(owner, "now tablerunning")
+	build_all_button_icons(UPDATE_BUTTON_BACKGROUND)
 
 /datum/action/innate/teshari_tablerun/Deactivate()
 	active = FALSE
 	passtable_off(owner, SPECIES_TRAIT)
 	owner.balloon_alert(owner, "no longer tablerunning")
+	build_all_button_icons(UPDATE_BUTTON_BACKGROUND)
 
 /datum/action/innate/teshari_tablerun/Remove(mob/removed_from)
 	. = ..()

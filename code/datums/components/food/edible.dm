@@ -620,7 +620,7 @@ Behavior that's still missing from this component that original food items had t
 	var/list/extra_complexity = list(0)
 	SEND_SIGNAL(parent, COMSIG_FOOD_GET_EXTRA_COMPLEXITY, extra_complexity)
 	var/complexity_to_add = extra_complexity[1]
-	if(!HAS_TRAIT(parent, TRAIT_FOOD_CHEF_MADE) || !istype(parent, /obj/item/food))
+	if(complexity_to_add > 0 && (!HAS_TRAIT(parent, TRAIT_FOOD_CHEF_MADE) || !istype(parent, /obj/item/food))) // DOPPLER EDIT - Was if(!HAS_TRAIT(parent, TRAIT_FOOD_CHEF_MADE) || !istype(parent, /obj/item/food))
 		return complexity_to_add // It is factory made. Soulless.
 	var/obj/item/food/food = parent
 	return food.crafting_complexity + complexity_to_add

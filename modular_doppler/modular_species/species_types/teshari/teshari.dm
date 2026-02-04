@@ -34,7 +34,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/mutant/teshari,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/teshari,
 	)
-	meat = /obj/item/food/meat/slab/chicken/human
+	meat = /obj/item/food/meat/slab/chicken/teshari
 	// species are instanced, so this is ok
 	/// The tablerun ability we will give to our teshari.
 	var/datum/action/innate/teshari_tablerun/tablerun
