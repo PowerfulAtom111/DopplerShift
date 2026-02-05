@@ -40,12 +40,6 @@
 	/// The tablerun ability we will give to our teshari.
 	var/datum/action/innate/teshari_tablerun/tablerun
 
-/datum/species/teshari/randomize_features()
-	var/list/features = ..()
-	features[FEATURE_EARS] = pick(SSaccessories.ears_list_teshari)
-	features[FEATURE_TAIL] = pick(SSaccessories.tails_list_teshari)
-	return features
-
 /datum/language_holder/teshari
 	understood_languages = list(
 		/datum/language/common = list(LANGUAGE_ATOM),
