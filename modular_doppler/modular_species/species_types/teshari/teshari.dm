@@ -35,9 +35,16 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/teshari,
 	)
 	meat = /obj/item/food/meat/slab/chicken/teshari
+	species_cookie = /obj/item/food/meat/slab
 	// species are instanced, so this is ok
 	/// The tablerun ability we will give to our teshari.
 	var/datum/action/innate/teshari_tablerun/tablerun
+
+/datum/species/teshari/randomize_features()
+	var/list/features = ..()
+	features[FEATURE_EARS] = pick(SSaccessories.ears_list_teshari)
+	features[FEATURE_TAIL] = pick(SSaccessories.tails_list_teshari)
+	return features
 
 /datum/language_holder/teshari
 	understood_languages = list(
