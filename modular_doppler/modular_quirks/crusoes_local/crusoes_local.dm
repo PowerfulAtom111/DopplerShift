@@ -10,9 +10,9 @@
 	medical_record_text = "Patient seems to have gotten accustomed to the local colonists' pidgins forming in Crusoe's Rest."
 
 /datum/quirk/crusoes_local/add(client/client_source)
-	quirk_holder.grant_language(/datum/language/crusoeslocal, source = LANGUAGE_MIND)
+	quirk_holder.grant_language(/datum/language/crusoeslocal, source = LANGUAGE_QUIRK)
 
 /datum/quirk/crusoes_local/remove()
 	if(QDELING(quirk_holder))
 		return
-	quirk_holder.remove_language(/datum/language/crusoeslocal, source = LANGUAGE_MIND)
+	quirk_holder.remove_language(/datum/language/crusoeslocal, source = LANGUAGE_QUIRK)
