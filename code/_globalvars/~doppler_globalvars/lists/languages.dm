@@ -27,7 +27,8 @@ GLOBAL_LIST_INIT(all_languages_by_priority, init_all_languages_by_priority())
 	var/total_mutual_understanding = counterlist_sum(the_localspeak.mutual_understanding)
 
 	for(var/datum/language/mutual_lang_type as anything in the_localspeak.mutual_understanding)
-		var/list/syllables_to_steal = language_prototypes[mutual_lang_type].syllables.Copy()
+		var/datum/language/mutual_lang = language_prototypes[mutual_lang_type]
+		var/list/syllables_to_steal = mutual_lang.syllables.Copy()
 		var/percent_this_language = round((the_localspeak.mutual_understanding[mutual_lang_type] / total_mutual_understanding) * 100, 1)
 		var/amount_to_steal = min(percent_this_language, length(syllables_to_steal))
 		for(var/i = 0, i < amount_to_steal, i++)
@@ -35,13 +36,13 @@ GLOBAL_LIST_INIT(all_languages_by_priority, init_all_languages_by_priority())
 			the_localspeak.syllables.Add(stolen_syllable)
 			syllables_to_steal.Remove(stolen_syllable)
 
-	var/datum/language/space_chance_lang_type = pick_weight(the_localspeak.mutual_understanding)
-	the_localspeak.space_chance = language_prototypes[space_chance_lang_type].space_chance
+	var/datum/language/space_chance_lang = language_prototypes[pick_weight(the_localspeak.mutual_understanding)]
+	the_localspeak.space_chance = space_chance_lang.space_chance
 
-	var/datum/language/sentence_chance_lang_type = pick_weight(the_localspeak.mutual_understanding)
-	the_localspeak.sentence_chance = language_prototypes[sentence_chance_lang_type].sentence_chance
-	the_localspeak.between_word_sentence_chance = language_prototypes[sentence_chance_lang_type].between_word_sentence_chance
+	var/datum/language/sentence_chance_lang = language_prototypes[pick_weight(the_localspeak.mutual_understanding)]
+	the_localspeak.sentence_chance = sentence_chance_lang.sentence_chance
+	the_localspeak.between_word_sentence_chance = sentence_chance_lang.between_word_sentence_chance
 
-	var/datum/language/syllable_chance_lang_type = pick_weight(the_localspeak.mutual_understanding)
-	the_localspeak.additional_syllable_low = language_prototypes[syllable_chance_lang_type].additional_syllable_low
-	the_localspeak.additional_syllable_high = language_prototypes[syllable_chance_lang_type].additional_syllable_high
+	var/datum/language/syllable_chance_lang = language_prototypes[pick_weight(the_localspeak.mutual_understanding)]
+	the_localspeak.additional_syllable_low = syllable_chance_lang.additional_syllable_low
+	the_localspeak.additional_syllable_high = syllable_chance_lang.additional_syllable_high
