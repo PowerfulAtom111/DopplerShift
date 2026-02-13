@@ -137,7 +137,6 @@
 	icon_state = "new_gibby"
 
 	key = "C"
-	flags = TONGUELESS_SPEECH
 	default_priority = 90
 
 	// We randomize these all based on mutual_understanding languages when initializing language prototypes
