@@ -1,5 +1,6 @@
 /obj/item/organ/tongue/get_possible_languages()
 	var/list/langs = ..()
+	langs += /datum/language/crusoeslocal
 	langs += /datum/language/konjin
 	langs += /datum/language/gutter
 	langs += /datum/language/movespeak
