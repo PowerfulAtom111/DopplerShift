@@ -25,17 +25,13 @@ GLOBAL_LIST_INIT(all_languages_by_priority, init_all_languages_by_priority())
 	var/datum/language/the_localspeak = language_prototypes[/datum/language/crusoeslocal]
 	the_localspeak.syllables = list()
 	var/total_mutual_understanding = counterlist_sum(the_localspeak.mutual_understanding)
-	log_admin("randomize_crusoes_local - [total_mutual_understanding]")
 
 	for(var/datum/language/mutual_lang_type as anything in the_localspeak.mutual_understanding)
-		log_admin("[mutual_lang_type]")
 		var/list/syllables_to_steal = language_prototypes[mutual_lang_type].syllables.Copy()
 		var/percent_this_language = round((the_localspeak.mutual_understanding[mutual_lang_type] / total_mutual_understanding) * 100, 1)
 		var/amount_to_steal = min(percent_this_language, length(syllables_to_steal))
-		log_admin("[mutual_lang_type]: [percent_this_language] - [amount_to_steal] - [the_localspeak.mutual_understanding[mutual_lang_type]] - [(the_localspeak.mutual_understanding[mutual_lang_type] / total_mutual_understanding)]")
 		for(var/i = 0, i < amount_to_steal, i++)
 			var/stolen_syllable = pick(syllables_to_steal)
-			log_admin("[mutual_lang_type]: [i] - [stolen_syllable] - [syllables_to_steal]")
 			the_localspeak.syllables.Add(stolen_syllable)
 			syllables_to_steal.Remove(stolen_syllable)
 
