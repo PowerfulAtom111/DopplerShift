@@ -317,6 +317,7 @@
 
 /datum/language/shadowtongue
 	name = "Shadowtongue"
-	desc = "TONGUE OF A REALITY PLANE OFFSET FIVE INCHES ABOVE YOURS; the language of Resonance and Magycks, spoken by sorcerers and reality-benders. The language their olden books are oft written in."
+	desc = "TONGUE OF A REALITY PLANE OFFSET FIVE INCHES ABOVE YOURS; the language of Resonance and Magycks, spoken by sorcerers and reality-benders. \
+	The language their olden books are oft written in."
 	// You should probably not be speaking in this as your standard tongue.
 	default_priority = 1
