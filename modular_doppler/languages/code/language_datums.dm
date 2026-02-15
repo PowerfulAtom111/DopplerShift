@@ -186,6 +186,8 @@
 		"drak", "drek", "dret",
 		"ath", "eth", "ekh", "skh",
 		"cala", "kesa", "resa",
+		// And Helrekesha
+		"beskh", "shekk", "sha",
 		// Borrowed from Hillosk
 		"fii", "sii", "rii", "rel",
 		"hil", "losk",
@@ -213,10 +215,11 @@
 /datum/language/uncommon
 	name = "Helresa"
 	desc = "A language family commonly spoken in the 4CA core sectors. \
-	Known as 'Helrekesa' at the time of the 2CA and having been used as the foundation for 3CA Celestial, \
+	Known as 'Helrekesha' at the time of the 2CA and having been used as the foundation for 3CA Celestial, \
 	modern Helresa still has a coherent historical throughline despite its age and consequent cultural intermingling."
 	default_priority = 98
 	syllables = list(
+		// Modern Helresa
 		"e",
 		"al", "el", "af", "ef", "as", "es",
 		"eol", "eul",
@@ -225,6 +228,21 @@
 		"drak", "drek", "dret",
 		"ath", "eth", "ekh", "skh",
 		"cala", "kesa", "resa",
+		// Archaic Helrekesha still present
+		"ri", "ha", "ho", "do",
+		"rie",
+		"bhe", "dha", "dhe", "cso",
+		"jha", "jaho", "jhe", "kha", "khe",
+		"sha", "she", "feh", "fre",
+		"mazz", "mezz", "mohk", "nett", "nott", "kott",
+		"takh", "tash", "tesh", "tekh", "vesh", "vekh",
+		"hesh", "zekh", "rakh",
+		"beskh", "shekk",
+		"khet", "ghes", "ghos",
+		"ar",
+		"aur", "arh",
+		"osh", "okh", "esh",
+		"iash", "iakh", "iokh", "lahk", "lekh",
 		// These are borrowed from Hillosk
 		"fii", "sii", "rii", "tol", "tok", "dia", "eres", "aere",
 		"hil", "losk",
@@ -250,7 +268,7 @@
 		"fer", "bal", "pii", "dala", "ban", "foe", "doa", "cii", "uis", "mel", "wex",
 		"incas", "int", "elc", "ent", "aws", "qip", "nas", "vil", "jens", "dila", "fa",
 		"la", "re", "do", "ji", "ae", "so", "qe", "ce", "na", "mo", "ha", "yu",
-		// These are borrowed from Helreesa
+		// These are borrowed from Helresa
 		"eul", "ekh", "skh",
 		"kesa", "resa",
 	)
