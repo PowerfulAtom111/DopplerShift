@@ -33,9 +33,6 @@
 /datum/language/nekomimetic
 	secret = TRUE  //...and so it vanished, a whisper in the darkness.
 
-/datum/language/carptongue
-	secret = TRUE
-
 /datum/language/buzzwords
 	secret = TRUE
 

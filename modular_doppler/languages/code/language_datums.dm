@@ -315,6 +315,13 @@
 	// Outside of synths/silicons who start with this selected, most people probably shouldn't. Low priority.
 	default_priority = 19
 
+/datum/language/carptongue
+	name = "Carptongue"
+	desc = "Not quite a full language, this is the various fishy vocalizations and gestures that space carp, sharks, and dragons use intuitively to communicate basic concepts. \
+	Words for more complex concepts form with the presence of a dragon anchoring them, and subsequently wane with the weaker long-term memory of dragonless carp."
+	// Niche tongue that probably shouldn't be spoken outside of carp genemodders.
+	default_priority = 18
+
 /datum/language/shadowtongue
 	name = "Shadowtongue"
 	desc = "TONGUE OF A REALITY PLANE OFFSET FIVE INCHES ABOVE YOURS; the language of Resonance and Magycks, spoken by sorcerers and reality-benders. \
