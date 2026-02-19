@@ -97,3 +97,27 @@
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/latexsuit
+	name = "Latex Catsuit"
+	desc = "A clingy and wonderfully shiny uniform made of latex rubber. Toggle to switch between masc and fem variants."
+	icon_state = "latexsuit"
+	icon = 'modular_doppler/modular_cosmetics/icons/obj/under/miscellania.dmi'
+	worn_icon = 'modular_doppler/modular_cosmetics/icons/mob/under/miscellania.dmi'
+	equip_sound = 'modular_doppler/modular_sounds/sound/items/latex.ogg'
+	inhand_icon_state = "latexsuit"
+	lefthand_file = 'modular_doppler/modular_cosmetics/icons/mob/inhands/miscellania_left.dmi'
+	righthand_file = 'modular_doppler/modular_cosmetics/icons/mob/inhands/miscellania_right.dmi'
+	strip_delay = 80
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/latexsuit/attack_hand(mob/user)
+	if(iscarbon(user))
+		var/mob/living/carbon/human/affected_human = user
+		if(src == affected_human.w_uniform)
+			if(!do_after(affected_human, 6 SECONDS, target = src))
+				return
+	. = ..()
