@@ -99,8 +99,8 @@
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/latexsuit
-	name = "Latex Catsuit"
-	desc = "A clingy and wonderfully shiny uniform made of latex rubber. Toggle to switch between masc and fem variants."
+	name = "latex bodysuit"
+	desc = "A form-fitting uniform made of shiny latex rubber. Toggle to switch between masc and fem variants."
 	icon_state = "latexsuit"
 	icon = 'modular_doppler/modular_cosmetics/icons/obj/under/miscellania.dmi'
 	worn_icon = 'modular_doppler/modular_cosmetics/icons/mob/under/miscellania.dmi'
