@@ -128,7 +128,12 @@
 	righthand_file = 'modular_doppler/modular_cosmetics/icons/mob/inhands/miscellania_right.dmi'
 	strip_delay = 80
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	supported_bodyshapes = list(BODYSHAPE_HUMANOID, BODYSHAPE_DIGITIGRADE)
+	bodyshape_icon_files = list(
+		BODYSHAPE_HUMANOID_T = 'modular_doppler/modular_cosmetics/icons/mob/under/miscellania.dmi',
+		BODYSHAPE_DIGITIGRADE_T = 'modular_doppler/modular_cosmetics/icons/obj/under/miscellania-digi.dmi'
+	)
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
 
