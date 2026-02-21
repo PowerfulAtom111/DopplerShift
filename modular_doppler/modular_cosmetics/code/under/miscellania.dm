@@ -145,10 +145,18 @@
 						"Feminine Half-suit" = "halflatexsuit_d"
 						)
 
-/obj/item/clothing/under/latexsuit/attack_hand(mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/human/affected_human = user
-		if(src == affected_human.w_uniform)
-			if(!do_after(affected_human, 6 SECONDS, target = src))
-				return
-	. = ..()
+//This makes the player have to sit through a 6 Second do_after when taking off the latex suit
+/obj/item/clothing/under/latexsuit/allow_attack_hand_drop(mob/user)
+    if(!iscarbon(src.loc))
+        return TRUE
+    var/mob/living/carbon/human/wearer = src.loc
+    if(wearer.w_uniform != src)
+        return TRUE
+
+    if(!do_after(user, 6 SECONDS, target = src))
+        return FALSE
+    return TRUE
+
+//Stops a player from click-dragging the latex suit into their hand, since we'd like them to take the latex suit off with a simple left-click and have to do the do_after
+/obj/item/clothing/under/latexsuit/mouse_drop_dragged(atom/over, mob/user, src_location, over_location, params)
+    return
