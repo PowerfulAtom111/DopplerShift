@@ -126,7 +126,7 @@
 	inhand_icon_state = "latexsuit"
 	lefthand_file = 'modular_doppler/modular_cosmetics/icons/mob/inhands/miscellania_left.dmi'
 	righthand_file = 'modular_doppler/modular_cosmetics/icons/mob/inhands/miscellania_right.dmi'
-	strip_delay = 80
+	strip_delay = 8 SECONDS
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 	supported_bodyshapes = list(BODYSHAPE_HUMANOID, BODYSHAPE_DIGITIGRADE)
