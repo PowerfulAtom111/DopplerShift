@@ -118,7 +118,9 @@
 
 /obj/item/clothing/under/latexsuit
 	name = "latex bodysuit"
-	desc = "A form-fitting uniform made of shiny latex rubber. Toggle to switch between masc and fem variants."
+	desc = "A form-fitting bodysuit made of a shiny latex polymer. Ages ago, it would've been a pain in the ass \
+	to get into, but centuries of clothing technology have made wearing it easier than ever before. \
+	Still, it takes longer to take off than an equivalent cloth garment."
 	icon_state = "latexsuit"
 	icon = 'modular_doppler/modular_cosmetics/icons/obj/under/miscellania.dmi'
 	worn_icon = 'modular_doppler/modular_cosmetics/icons/mob/under/miscellania.dmi'
@@ -134,8 +136,14 @@
 		BODYSHAPE_HUMANOID_T = 'modular_doppler/modular_cosmetics/icons/mob/under/miscellania.dmi',
 		BODYSHAPE_DIGITIGRADE_T = 'modular_doppler/modular_cosmetics/icons/obj/under/miscellania-digi.dmi'
 	)
-	can_adjust = TRUE
-	alt_covers_chest = TRUE
+	can_adjust = FALSE
+	obj_flags = parent_type::obj_flags | INFINITE_RESKIN
+	unique_reskin = list(
+						"Masculine" = "latexsuit",
+						"Feminine" = "latexsuit_d",
+						"Masculine Half-suit" = "halflatexsuit",
+						"Feminine Half-suit" = "halflatexsuit_d"
+						)
 
 /obj/item/clothing/under/latexsuit/attack_hand(mob/user)
 	if(iscarbon(user))
