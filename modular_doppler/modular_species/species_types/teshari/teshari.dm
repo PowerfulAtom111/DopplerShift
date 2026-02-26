@@ -12,14 +12,18 @@
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
 		TRAIT_NO_UNDERWEAR,
-		TRAIT_STRONG_STOMACH
 	)
-	mutantears = /obj/item/organ/ears/teshari
 	digitigrade_customization = DIGITIGRADE_NEVER
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	payday_modifier = 1.0
+	mutantears = /obj/item/organ/ears/teshari
 	mutanttongue = /obj/item/organ/tongue/teshari
 	mutanteyes = /obj/item/organ/eyes/teshari
+	mutantstomach = /obj/item/organ/stomach/teshari
+	mutant_organs = list(
+		/obj/item/organ/tail/teshari = "Teshari (Default)",
+		/obj/item/organ/ears/teshari = "Teshari Regular"
+	)
 	coldmod = TESHARI_COLDMOD
 	heatmod = TESHARI_HEATMOD
 	bodytemp_normal = BODYTEMP_NORMAL + TESHARI_TEMP_OFFSET

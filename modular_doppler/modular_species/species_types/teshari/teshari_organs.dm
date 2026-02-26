@@ -1,3 +1,5 @@
+#define TESH_STOMACH_HEAVY_METAL_PURGE_RATE 0.2 // per second
+
 /obj/item/organ/ears/teshari
 	name = "teshari ears"
 	desc = "A set of four long rabbit-like ears, a Teshari's main tool while hunting. Naturally extremely sensitive to loud sounds."
@@ -94,3 +96,25 @@
 /datum/bodypart_overlay/mutant/tail/teshari/get_global_feature_list()
 	return SSaccessories.tails_list_teshari
 
+/obj/item/organ/stomach/teshari
+	name = "teshari stomach"
+	desc = "A scavenger bird's stomach, well-suited for digestion of carrion and purging of heavy metals. Ill-suited for most other tasks."
+	organ_traits = list(TRAIT_STRONG_STOMACH)
+	metabolism_efficiency = 0.04
+	/// If a reagent in this list is in our stomach, we rapidly purge it.
+	var/static/list/purgable_heavy_metals = list(/datum/reagent/mercury, /datum/reagent/lead)
+
+/obj/item/organ/stomach/teshari/on_life(seconds_per_tick, times_fired)
+	if (!(organ_flags & ORGAN_FAILING))
+		for (var/datum/reagent/bit as anything in reagents?.reagent_list)
+			if (bit.metabolization_rate <= 0)
+				continue
+
+			for (var/purgable_type as anything in purgable_heavy_metals)
+				if (istype(bit, purgable_type))
+					reagents.remove_reagent(bit.type, TESH_STOMACH_HEAVY_METAL_PURGE_RATE * seconds_per_tick)
+					break
+
+	return ..()
+
+#undef TESH_STOMACH_HEAVY_METAL_PURGE_RATE
