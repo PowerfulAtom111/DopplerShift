@@ -110,7 +110,7 @@
 	)
 	icon = 'modular_doppler/languages/icons/language.dmi'
 	icon_state = "schechi"
-	default_priority = 65
+	default_priority = 67
 
 /datum/language/schechi/get_random_name(
 	gender = NEUTER,
