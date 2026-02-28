@@ -126,7 +126,7 @@
 
 /obj/item/clothing/accessory/proc/generate_accessory_overlay(obj/item/clothing/under/attached_to)
 	SHOULD_CALL_PARENT(TRUE)
-	// DOPPLER EDIT BEGIN
+	// DOPPLER EDIT ADDITION BEGIN
 	var/local_worn_icon = worn_icon
 	var/mob/living/carbon/human/human_wearer = attached_to.loc
 	if (istype(human_wearer))
@@ -137,8 +137,8 @@
 					local_worn_icon = bodyshape_icon_files["[shape]"]
 					if (shape != BODYSHAPE_HUMANOID) // EVERYTHING has this
 						break
-	// DOPPLER EDIT END
-	var/mutable_appearance/appearance = mutable_appearance(local_worn_icon, icon_state) // DOPPLER SHIFT EDIT - was var/mutable_appearance/appearance = mutable_appearance(worn_icon, icon_state)
+	// DOPPLER EDIT ADDITION END
+	var/mutable_appearance/appearance = mutable_appearance(local_worn_icon, icon_state) // DOPPLER EDIT CHANGE - originally: var/mutable_appearance/appearance = mutable_appearance(worn_icon, icon_state)
 	appearance.alpha = alpha
 	appearance.color = color
 	return appearance
