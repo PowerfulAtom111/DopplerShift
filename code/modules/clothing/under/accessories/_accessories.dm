@@ -126,7 +126,7 @@
 
 /obj/item/clothing/accessory/proc/generate_accessory_overlay(obj/item/clothing/under/attached_to)
 	SHOULD_CALL_PARENT(TRUE)
-	// DOPPLER EDIT ADDITION BEGIN
+	// DOPPLER EDIT ADDITION BEGIN - Teshari accessory sprites
 	var/local_worn_icon = worn_icon
 	var/mob/living/carbon/human/human_wearer = attached_to.loc
 	if (istype(human_wearer))

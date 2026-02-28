@@ -101,7 +101,7 @@ There are several things that need to be remembered:
 		var/handled_by_bodyshape = TRUE
 		var/icon_file
 		var/woman
-		/// DOPPLER SHIFT ADDITION BEGIN
+		/// DOPPLER EDIT ADDITION BEGIN
 		var/found_special_sprite = FALSE
 		for(var/shape in uniform.supported_bodyshapes)
 			if(!(bodyshape & shape))
@@ -126,13 +126,13 @@ There are several things that need to be remembered:
 
 		if (!found_special_sprite && !autogen_override)
 			handled_by_bodyshape = FALSE
-		/// DOPPLER SHIFT ADDITION END
+		/// DOPPLER EDIT ADDITION END
 		//BEGIN SPECIES HANDLING
 		/*if((bodyshape & BODYSHAPE_DIGITIGRADE) && (uniform.supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION))
 			icon_file = DIGITIGRADE_UNIFORM_FILE*/
-		/// DOPPLER SHIFT REMOVAL END
+		/// DOPPLER EDIT REMOVAL END
 		//Female sprites have lower priority than digitigrade sprites
-		if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) //Agggggggghhhhh /// DOPPLER SHIFT EDIT END
+		if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) //Agggggggghhhhh /// DOPPLER EDIT END
 			woman = TRUE
 
 		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(uniform)))
@@ -147,7 +147,7 @@ There are several things that need to be remembered:
 			female_uniform = woman ? uniform.female_sprite_flags : null,
 			override_state = target_overlay,
 			override_file = (handled_by_bodyshape) ? icon_file : null,
-			humie = src, /// DOPPLER SHIFT ADDITION
+			humie = src, /// DOPPLER EDIT ADDITION
 		)
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
@@ -175,14 +175,14 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/id.dmi'
 
-		/// DOPPLER SHIFT ADDITION BEGIN
+		/// DOPPLER EDIT ADDITION BEGIN
 		for(var/shape in wear_id.supported_bodyshapes)
 			if(bodyshape & shape)
 				icon_file = wear_id.bodyshape_icon_files["[shape]"]
-		/// DOPPLER SHIFT ADDITION END
+		/// DOPPLER EDIT ADDITION END
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST) // DOPPLER EDIT ADDITION
-		id_overlay = get_updated_worn_icon(worn_item, ID_LAYER, OFFSET_ID, icon_file, my_chest.worn_id_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		id_overlay = get_updated_worn_icon(worn_item, ID_LAYER, OFFSET_ID, icon_file, my_chest.worn_id_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 
 		if(!id_overlay)
 			return
@@ -228,7 +228,7 @@ There are several things that need to be remembered:
 
 	var/icon_file = 'icons/mob/clothing/hands.dmi'
 
-	var/mutable_appearance/gloves_overlay = get_updated_worn_icon(worn_item, GLOVES_LAYER, OFFSET_GLOVES, icon_file, null) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+	var/mutable_appearance/gloves_overlay = get_updated_worn_icon(worn_item, GLOVES_LAYER, OFFSET_GLOVES, icon_file, null) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 
 	var/feature_y_offset = 0
 	//needs to be typed, hand_bodyparts can have nulls
@@ -275,7 +275,7 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/eyes.dmi'
 
-		var/mutable_appearance/glasses_overlay = get_updated_worn_icon(glasses, GLASSES_LAYER, OFFSET_GLASSES, icon_file, my_head?.worn_glasses_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/glasses_overlay = get_updated_worn_icon(glasses, GLASSES_LAYER, OFFSET_GLASSES, icon_file, my_head?.worn_glasses_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//my_head?.worn_glasses_offset?.apply_offset(glasses_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 		overlays_standing[GLASSES_LAYER] = glasses_overlay
 	apply_overlay(GLASSES_LAYER)
@@ -301,7 +301,7 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/ears.dmi'
 
-		var/mutable_appearance/ears_overlay = get_updated_worn_icon(ears, NECK_LAYER, OFFSET_NECK, icon_file, my_head?.worn_ears_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/ears_overlay = get_updated_worn_icon(ears, NECK_LAYER, OFFSET_NECK, icon_file, my_head?.worn_ears_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//my_chest?.worn_ears_offset?.apply_offset(head_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 
 		overlays_standing[EARS_LAYER] = ears_overlay
@@ -324,7 +324,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/neck.dmi'
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
-		var/mutable_appearance/neck_overlay = get_updated_worn_icon(wear_neck, NECK_LAYER, OFFSET_NECK, icon_file, my_chest?.worn_neck_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/neck_overlay = get_updated_worn_icon(wear_neck, NECK_LAYER, OFFSET_NECK, icon_file, my_chest?.worn_neck_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//var/obj/item/bodypart/chest/my_head = get_bodypart(BODY_ZONE_HEAD) // Doppler edit removal - Moved up
 		//my_chest?.worn_suit_offset?.apply_offset(head_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 
@@ -351,7 +351,7 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SHOES_FILE
 
-		var/mutable_appearance/shoes_overlay = get_updated_worn_icon(shoes, SHOES_LAYER, OFFSET_SHOES, icon_file, null) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/shoes_overlay = get_updated_worn_icon(shoes, SHOES_LAYER, OFFSET_SHOES, icon_file, null) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 
 		if(!shoes_overlay)
 			return
@@ -386,7 +386,7 @@ There are several things that need to be remembered:
 			return
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
-		var/mutable_appearance/s_store_overlay = get_updated_worn_icon(s_store, SUIT_STORE_LAYER, OFFSET_S_STORE, 'icons/mob/clothing/belt_mirror.dmi', my_chest?.worn_suit_storage_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/s_store_overlay = get_updated_worn_icon(s_store, SUIT_STORE_LAYER, OFFSET_S_STORE, 'icons/mob/clothing/belt_mirror.dmi', my_chest?.worn_suit_storage_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//var/obj/item/bodypart/chest/my_head = get_bodypart(BODY_ZONE_HEAD) // Doppler edit removal - Moved up
 		//my_chest?.worn_suit_offset?.apply_offset(head_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 
@@ -409,7 +409,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/head/default.dmi'
 
 		var/obj/item/bodypart/head/my_head = get_bodypart(BODY_ZONE_HEAD)
-		var/mutable_appearance/head_overlay = get_updated_worn_icon(head, HEAD_LAYER, OFFSET_HEAD, icon_file, my_head?.worn_head_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/head_overlay = get_updated_worn_icon(head, HEAD_LAYER, OFFSET_HEAD, icon_file, my_head?.worn_head_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//var/obj/item/bodypart/chest/my_head = get_bodypart(BODY_ZONE_HEAD) // Doppler edit removal - Moved up
 		//my_chest?.worn_suit_offset?.apply_offset(head_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 
@@ -435,7 +435,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/belt.dmi'
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
-		var/mutable_appearance/belt_overlay = get_updated_worn_icon(belt, BELT_LAYER, OFFSET_BELT, icon_file, my_chest?.worn_belt_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/belt_overlay = get_updated_worn_icon(belt, BELT_LAYER, OFFSET_BELT, icon_file, my_chest?.worn_belt_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST) // Doppler edit removal - Moved up
 		//my_chest?.worn_suit_offset?.apply_offset(suit_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 		overlays_standing[BELT_LAYER] = belt_overlay
@@ -459,7 +459,7 @@ There are several things that need to be remembered:
 		var/icon_file = DEFAULT_SUIT_FILE
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
-		var/mutable_appearance/suit_overlay = get_updated_worn_icon(wear_suit, SUIT_LAYER, OFFSET_SUIT, icon_file, my_chest?.worn_suit_offset) /// DOPPLER SHIFT EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/suit_overlay = get_updated_worn_icon(wear_suit, SUIT_LAYER, OFFSET_SUIT, icon_file, my_chest?.worn_suit_offset) /// DOPPLER EDIT - WAS wear_suit.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST) // Doppler edit removal - Moved up
 		//my_chest?.worn_suit_offset?.apply_offset(suit_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 		overlays_standing[SUIT_LAYER] = suit_overlay
@@ -508,7 +508,7 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/mask.dmi'
 
-		var/mutable_appearance/mask_overlay = get_updated_worn_icon(wear_mask, FACEMASK_LAYER, OFFSET_FACEMASK, icon_file, my_head?.worn_mask_offset) /// DOPPLER SHIFT EDIT - WAS wear_maskback.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		var/mutable_appearance/mask_overlay = get_updated_worn_icon(wear_mask, FACEMASK_LAYER, OFFSET_FACEMASK, icon_file, my_head?.worn_mask_offset) /// DOPPLER EDIT - WAS wear_maskback.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 		//my_head?.worn_mask_offset?.apply_offset(mask_overlay) // DOPPLER EDIT REMOVAL - Moved into get_updated_worn_icon
 		overlays_standing[FACEMASK_LAYER] = mask_overlay
 
@@ -533,7 +533,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/back.dmi'
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
-		back_overlay = get_updated_worn_icon(back, BACK_LAYER, OFFSET_BACK, icon_file, my_chest?.worn_back_offset) /// DOPPLER SHIFT EDIT - WAS back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
+		back_overlay = get_updated_worn_icon(back, BACK_LAYER, OFFSET_BACK, icon_file, my_chest?.worn_back_offset) /// DOPPLER EDIT - WAS back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, override_file = autogen_override ? icon_file : null, humie = src)
 
 		if(!back_overlay)
 			return
@@ -878,7 +878,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 	//Find a valid icon_state from variables+arguments
 	var/t_state = override_state || (isinhands ? inhand_icon_state : worn_icon_state) || icon_state
-	/// DOPPLER SHIFT ADDITION BEGIN
+	/// DOPPLER EDIT ADDITION BEGIN
 	/// IMPORTANT NOTE: Keep the humie var!
 	var/chosen_worn_icon = worn_icon
 	var/using_taur_variant = FALSE
@@ -890,7 +890,7 @@ generate/load female uniform sprites matching all previously decided variables
 				using_taur_variant = (shape & BODYSHAPE_TAUR_ALL)
 				chosen_worn_icon = bodyshape_icon_files["[shape]"]
 	//Find a valid icon file from variables+arguments
-	var/file2use = override_file || (isinhands ? null : chosen_worn_icon) || default_icon_file /// DOPPLER SHIFT EDIT END
+	var/file2use = override_file || (isinhands ? null : chosen_worn_icon) || default_icon_file /// DOPPLER EDIT END
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer || default_layer
 
@@ -913,7 +913,7 @@ generate/load female uniform sprites matching all previously decided variables
 			key = "[t_state]-[file2use]-[female_uniform]",
 			greyscale_colors = greyscale_colors,
 		)
-	/// DOPPLER SHIFT ADDITION START - Taur-friendly uniforms and suits
+	/// DOPPLER EDIT ADDITION BEGIN - Taur-friendly uniforms and suits
 	var/shift_pixel_x = 0
 	if (istype(wearer) && wearer.bodyshape & BODYSHAPE_TAUR)
 		if (!using_taur_variant)
@@ -925,7 +925,7 @@ generate/load female uniform sprites matching all previously decided variables
 				building_icon = wear_taur_version(t_state, building_icon || icon(file2use, t_state), female_uniform, greyscale_colors, cropping_state)
 		else
 			shift_pixel_x = -16 // it doesnt look right otherwise
-	/// DOPPLER SHIFT ADDITION END
+	/// DOPPLER EDIT ADDITION END
 	if(building_icon)
 		draw_target = mutable_appearance(building_icon, layer = -layer2use)
 	else
@@ -950,7 +950,7 @@ generate/load female uniform sprites matching all previously decided variables
 		standing = draw_target
 
 	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)
-	standing.pixel_x += shift_pixel_x // DOPPLER SHIFT EDIT ADDITION - Taur-friendly uniforms and suits
+	standing.pixel_x += shift_pixel_x // DOPPLER EDIT ADDITION - Taur-friendly uniforms and suits
 
 	//Worn offsets
 	var/list/offsets = get_worn_offsets(isinhands)
