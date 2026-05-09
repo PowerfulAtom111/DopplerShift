@@ -50,6 +50,10 @@
 	name = "Jackboots (Colorable)"
 	item_path = /obj/item/clothing/shoes/jackboots/recolorable
 
+/datum/loadout_item/shoes/boots/jackboots_striped
+	name = "Jackboots (Stripe)"
+	item_path = /obj/item/clothing/shoes/jackboots/jackboots_striped
+
 /datum/loadout_item/shoes/boots/jackboots_sec
 	name = "Jackboots (Security)"
 	item_path = /obj/item/clothing/shoes/jackboots/sec

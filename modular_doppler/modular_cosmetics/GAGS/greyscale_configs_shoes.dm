@@ -67,6 +67,15 @@
 	name = "Boots (Worn, Digi)"
 	icon_file = 'modular_doppler/modular_cosmetics/icons/mob/shoes/casual_digi.dmi'
 
+/datum/greyscale_config/jackboots_striped
+	name = "Jackboots (Stripe)"
+	icon_file = 'modular_doppler/modular_cosmetics/icons/obj/shoes/casual.dmi'
+	json_config = 'modular_doppler/modular_cosmetics/GAGS/json_configs/shoes/jackboots_striped.json'
+
+/datum/greyscale_config/jackboots_striped/worn
+	name = "Jackboots (Stripe, Worn)"
+	icon_file = 'modular_doppler/modular_cosmetics/icons/mob/shoes/casual.dmi'
+
 // ROLLERBLADES
 
 /datum/greyscale_config/rollerblades

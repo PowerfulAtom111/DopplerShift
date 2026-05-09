@@ -1,0 +1,16 @@
+{
+	"jackboots_striped": [
+		{
+			"type": "icon_state",
+			"icon_state": "jackboots_striped",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "jackboots_striped_stripe",
+			"blend_mode": "overlay",
+			"color_ids": [2]
+		}
+	]
+}

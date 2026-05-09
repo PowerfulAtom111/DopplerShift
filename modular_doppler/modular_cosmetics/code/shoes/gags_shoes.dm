@@ -44,6 +44,16 @@
 	)
 	flags_1 = IS_PLAYER_COLORABLE_1
 
+/obj/item/clothing/shoes/jackboots/jackboots_striped
+	icon = 'modular_doppler/modular_cosmetics/icons/obj/shoes/casual.dmi'
+	worn_icon = 'modular_doppler/modular_cosmetics/icons/mob/shoes/casual.dmi'
+	icon_state = "jackboots_striped"
+	post_init_icon_state = "jackboots_striped"
+	greyscale_colors = "#39383b#88242d"
+	greyscale_config = /datum/greyscale_config/jackboots_striped
+	greyscale_config_worn = /datum/greyscale_config/jackboots_striped/worn
+	flags_1 = IS_PLAYER_COLORABLE_1
+
 /obj/item/clothing/shoes/wraps
 	name = "cloth foot wraps"
 	desc = "Simple cloth footwraps, suitable for padding the heels."
